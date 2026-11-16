@@ -1,0 +1,21 @@
+{
+  "name": "dnic-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p 3000",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0 -p 3000",
+    "lint": "echo 'Use next build for app validation'"
+  },
+  "dependencies": {
+    "@next/swc-darwin-arm64": "^16.4.6",
+    "lucide-react": "^1.73.0",
+    "next": "^16.0.8",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
