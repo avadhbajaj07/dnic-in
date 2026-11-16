@@ -172,7 +172,7 @@ export default function LearningHubPage() {
         </div>
       </section>
 
-      {/* Cross-Link to Books */}
+      {/* Cross-Link to Books with 3-Book Bundle Mockup */}
       <section className="section section-subtle">
         <div className="shell">
           <div
@@ -180,33 +180,51 @@ export default function LearningHubPage() {
               background: "#FFFFFF",
               border: "1px solid var(--border)",
               borderRadius: "var(--radius-xl)",
-              padding: "48px 40px",
-              display: "flex",
-              justifyContent: "space-between",
+              padding: "40px 36px",
+              display: "grid",
+              gridTemplateColumns: "1.1fr 0.9fr",
               alignItems: "center",
-              flexWrap: "wrap",
-              gap: "28px",
+              gap: "36px",
+              boxShadow: "var(--shadow-sm)",
             }}
+            className="bundle-spotlight-card"
           >
             <div>
-              <span className="badge badge-teal" style={{ marginBottom: "8px" }}>
+              <span className="badge badge-teal" style={{ marginBottom: "12px", display: "inline-block" }}>
                 PAIRED INTERVIEW READING
               </span>
-              <h2 style={{ fontSize: "1.8rem", margin: "4px 0 8px" }}>
+              <h2 style={{ fontSize: "clamp(1.7rem, 3.5vw, 2.2rem)", margin: "4px 0 14px", lineHeight: 1.25 }}>
                 Prefer Structured Reading Alongside Videos?
               </h2>
-              <p style={{ color: "var(--body)", maxWidth: "560px", margin: 0 }}>
-                Explore the complete collection of 8 published books by Nirbhay Chauhan covering .NET, C#, Azure, and QA testing.
+              <p style={{ color: "var(--body)", maxWidth: "560px", marginBottom: "24px", lineHeight: 1.65 }}>
+                Explore the complete collection of 8 published books by Nirbhay Chauhan covering .NET, C#, Azure, and QA testing. Every video tutorial maps directly to in-depth chapters and interview scenarios.
               </p>
+
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <Link href="/books/" className="button button-primary">
+                  Explore the 8 Books <ArrowRight size={16} />
+                </Link>
+                <Link href="/resume-writing/get-started/" className="button button-secondary">
+                  Build My Resume
+                </Link>
+              </div>
             </div>
 
-            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <Link href="/books/" className="button button-primary">
-                Explore the 8 Books <ArrowRight size={16} />
-              </Link>
-              <Link href="/resume-writing/get-started/" className="button button-secondary">
-                Build My Resume
-              </Link>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <img
+                src="/images/mockups/dotnet-interview-bundle.png"
+                alt=".NET Interview Book Bundle — Master C#, Master .NET Fundamentals, .NET Developer's Interview Toolkit"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxHeight: "300px",
+                  objectFit: "contain",
+                  borderRadius: "14px",
+                  boxShadow: "var(--shadow-md)",
+                  display: "block",
+                }}
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

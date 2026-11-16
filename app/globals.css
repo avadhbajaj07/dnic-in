@@ -2313,4 +2313,24 @@ html {
   }
 }
 
+/* Landing Pages & Bundle Spotlight Mockups */
+.bundle-spotlight-card {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+}
+
+.bundle-spotlight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+  .bundle-spotlight-card {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 24px 18px !important;
+    text-align: center;
+  }
+}
+
+
 

@@ -12,6 +12,8 @@ export default function LandingCollection({
   subtitle,
   countText,
   infographic,
+  heroMockup,
+  bundleSpotlight,
 }) {
   const chosen = books.filter((b) => b.category === category);
 
@@ -19,7 +21,7 @@ export default function LandingCollection({
     <>
       {/* Campaign Hero Banner */}
       <section className="section section-mint" style={{ padding: "64px 0 52px" }}>
-        <div className="shell" style={{ textAlign: "center", maxWidth: "820px", margin: "0 auto" }}>
+        <div className="shell" style={{ textAlign: "center", maxWidth: "860px", margin: "0 auto" }}>
           <span className="eyebrow">{eyebrow}</span>
           <h1 style={{ fontSize: "clamp(2.2rem, 4.2vw, 3.4rem)", marginBottom: "16px" }}>
             {title}
@@ -27,6 +29,30 @@ export default function LandingCollection({
           <p style={{ fontSize: "1.15rem", lineHeight: "1.7", color: "#374151", marginBottom: "28px" }}>
             {subtitle}
           </p>
+
+          {/* Hero 3D Book Mockup Display */}
+          {heroMockup && (
+            <div style={{ maxWidth: "720px", margin: "0 auto 32px" }}>
+              <img
+                src={heroMockup.src}
+                alt={heroMockup.alt}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxHeight: heroMockup.maxHeight || "360px",
+                  objectFit: "contain",
+                  display: "block",
+                  margin: "0 auto",
+                  filter: heroMockup.isTransparent
+                    ? "drop-shadow(0 16px 36px rgba(0,0,0,0.14))"
+                    : "none",
+                  borderRadius: heroMockup.isTransparent ? "0" : "18px",
+                  boxShadow: heroMockup.isTransparent ? "none" : "var(--shadow-lg)",
+                }}
+                loading="eager"
+              />
+            </div>
+          )}
 
           <div
             style={{
@@ -165,6 +191,76 @@ export default function LandingCollection({
           </div>
         </div>
       </section>
+
+      {/* Curated Bundle Spotlight Section */}
+      {bundleSpotlight && (
+        <section className="section section-mint" style={{ padding: "52px 0" }}>
+          <div className="shell">
+            <div
+              style={{
+                maxWidth: "960px",
+                margin: "0 auto",
+                background: "#FFFFFF",
+                borderRadius: "var(--radius-xl)",
+                border: "1px solid var(--border)",
+                padding: "40px 36px",
+                display: "grid",
+                gridTemplateColumns: "1.1fr 0.9fr",
+                gap: "36px",
+                alignItems: "center",
+                boxShadow: "var(--shadow-md)",
+              }}
+              className="bundle-spotlight-card"
+            >
+              <div>
+                <span className="eyebrow">{bundleSpotlight.eyebrow}</span>
+                <h3 style={{ fontSize: "1.75rem", marginBottom: "14px", lineHeight: 1.25 }}>
+                  {bundleSpotlight.title}
+                </h3>
+                <p style={{ color: "var(--body)", lineHeight: "1.65", marginBottom: "22px", fontSize: "0.98rem" }}>
+                  {bundleSpotlight.desc}
+                </p>
+                <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "26px" }}>
+                  {bundleSpotlight.bullets?.map((bullet, idx) => (
+                    <div key={idx} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <CheckCircle2 size={16} color="var(--primary)" style={{ flexShrink: 0 }} />
+                      <span style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--headline)" }}>{bullet}</span>
+                    </div>
+                  ))}
+                </div>
+                <a
+                  href={site.amazonAuthor}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button button-primary"
+                >
+                  {bundleSpotlight.ctaText || "Get the Bundle on Amazon ↗"}
+                </a>
+              </div>
+
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <img
+                  src={bundleSpotlight.mockupSrc}
+                  alt={bundleSpotlight.title}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    maxHeight: "330px",
+                    objectFit: "contain",
+                    display: "block",
+                    filter: bundleSpotlight.isTransparent
+                      ? "drop-shadow(0 16px 32px rgba(0,0,0,0.14))"
+                      : "none",
+                    borderRadius: bundleSpotlight.isTransparent ? "0" : "14px",
+                    boxShadow: bundleSpotlight.isTransparent ? "none" : "var(--shadow-md)",
+                  }}
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Trust & Guarantee Banner */}
       <section className="section section-subtle" style={{ padding: "52px 0" }}>

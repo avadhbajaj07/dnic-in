@@ -22,6 +22,24 @@ export default function BooksPage() {
           <p style={{ fontSize: "1.15rem", lineHeight: "1.7", color: "#374151" }}>
             Choose your format: instant high-resolution e-book PDF download, or a hardcover delivered to your door. Every book is written to help you walk into the technical interview room prepared.
           </p>
+
+          {/* Fanned Stack of Developer Interview Books (Transparent Mockup) */}
+          <div style={{ maxWidth: "680px", margin: "28px auto 0" }}>
+            <img
+              src="/images/mockups/fanned-developer-books-transparent.png"
+              alt="Fanned Stack of Developer Interview Books by Nirbhay Chauhan"
+              style={{
+                width: "100%",
+                height: "auto",
+                maxHeight: "340px",
+                objectFit: "contain",
+                display: "block",
+                margin: "0 auto",
+                filter: "drop-shadow(0 18px 36px rgba(0,0,0,0.14))",
+              }}
+              loading="eager"
+            />
+          </div>
         </div>
       </section>
 

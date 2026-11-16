@@ -76,6 +76,28 @@ export default function AboutNirbhayPage() {
         </div>
       </section>
 
+      {/* Author's Complete Published Collection Mockup */}
+      <section className="section" style={{ paddingTop: 0, paddingBottom: "48px" }}>
+        <div className="shell text-center" style={{ textAlign: "center" }}>
+          <div style={{ maxWidth: "780px", margin: "0 auto" }}>
+            <img
+              src="/images/mockups/fanned-developer-books-transparent.png"
+              alt="Published Interview Books by Nirbhay Chauhan"
+              style={{
+                width: "100%",
+                height: "auto",
+                maxHeight: "360px",
+                objectFit: "contain",
+                display: "block",
+                margin: "0 auto",
+                filter: "drop-shadow(0 18px 36px rgba(0,0,0,0.12))",
+              }}
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Published Library Catalog */}
       <section className="section section-subtle">
         <div className="shell">

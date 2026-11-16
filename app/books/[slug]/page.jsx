@@ -305,6 +305,78 @@ export default async function BookDetailPage({ params }) {
         </div>
       </section>
 
+      {/* Series Bundle Callout */}
+      <section className="section section-subtle" style={{ padding: "44px 0" }}>
+        <div className="shell">
+          <div
+            style={{
+              background: "#FFFFFF",
+              borderRadius: "var(--radius-xl)",
+              border: "1px solid var(--border)",
+              padding: "36px 32px",
+              display: "grid",
+              gridTemplateColumns: "1.1fr 0.9fr",
+              gap: "32px",
+              alignItems: "center",
+              boxShadow: "var(--shadow-sm)",
+            }}
+            className="bundle-spotlight-card"
+          >
+            <div>
+              <span className="eyebrow">CURATED SERIES BUNDLE</span>
+              <h3 style={{ fontSize: "1.6rem", marginBottom: "12px", lineHeight: 1.25 }}>
+                {b.category === "qa"
+                  ? "Master Manual & Automation QA with the 2-Book Series"
+                  : "Expand into Cloud & Full-Stack with the Flagship Trilogy"}
+              </h3>
+              <p style={{ color: "var(--body)", lineHeight: "1.65", marginBottom: "22px", fontSize: "0.95rem" }}>
+                {b.category === "qa"
+                  ? "Combine fundamental STLC and test design secrets with real-world Playwright, Selenium, and API automation frameworks."
+                  : "Pair runtime fundamentals with modern Azure cloud architecture, ASP.NET Core web APIs, and front-end system design."}
+              </p>
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <a
+                  href={amazonUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button button-primary"
+                >
+                  View Bundle on Amazon <ExternalLink size={15} />
+                </a>
+                <Link
+                  href={b.category === "qa" ? "/qa-interview-books/" : "/developer-interview-books/"}
+                  className="button button-secondary"
+                >
+                  Explore {b.categoryLabel} Series
+                </Link>
+              </div>
+            </div>
+
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <img
+                src={
+                  b.category === "qa"
+                    ? "/images/mockups/floating-qa-mockup.png"
+                    : "/images/mockups/three-books-transparent.png"
+                }
+                alt={b.category === "qa" ? "QA Interview Book Duo" : "Flagship Developer Trilogy"}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxHeight: "280px",
+                  objectFit: "contain",
+                  display: "block",
+                  filter: b.category === "qa" ? "none" : "drop-shadow(0 14px 28px rgba(0,0,0,0.12))",
+                  borderRadius: b.category === "qa" ? "12px" : "0",
+                  boxShadow: b.category === "qa" ? "var(--shadow-md)" : "none",
+                }}
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Related Books */}
       <section className="section section-mint">
         <div className="shell">

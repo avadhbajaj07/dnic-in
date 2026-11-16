@@ -419,6 +419,24 @@ export default function Home() {
             Verified publications authored by Nirbhay Chauhan, trusted by thousands of candidates preparing for senior rounds.
           </p>
 
+          {/* Featured 3-Book Trilogy Showcase (Must-Use Mockup) */}
+          <div style={{ maxWidth: "680px", margin: "0 auto 36px" }}>
+            <img
+              src="/images/mockups/three-books-transparent.png"
+              alt="Flagship Architecture Trilogy — Conquer Azure, Mastering .NET Core, The Complete Front-End by Nirbhay Chauhan"
+              style={{
+                width: "100%",
+                height: "auto",
+                maxHeight: "360px",
+                objectFit: "contain",
+                display: "block",
+                margin: "0 auto",
+                filter: "drop-shadow(0 18px 36px rgba(0,0,0,0.12))",
+              }}
+              loading="eager"
+            />
+          </div>
+
           {/* Browser Window Mockup */}
           <div className="browser-mockup">
             <div className="browser-header">
