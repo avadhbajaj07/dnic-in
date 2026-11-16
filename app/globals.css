@@ -2102,3 +2102,215 @@ html {
   }
 }
 
+/* ==========================================================================
+   MOBILE-FIRST ENHANCEMENTS FOR STATS BAR & COMMUNITY INTRO
+   ========================================================================== */
+
+/* Section 2: Social Proof Stats Grid */
+.stats-bar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.stats-metric-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+}
+
+.stats-metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  border-color: #D1D5DB;
+}
+
+.stats-metric-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stats-icon-yt {
+  background: #FEE2E2;
+  color: #DC2626;
+  border: 1px solid #FECACA;
+}
+
+.stats-icon-li {
+  background: #EFF6FF;
+  color: #2563EB;
+  border: 1px solid #BFDBFE;
+}
+
+.stats-icon-amz {
+  background: #FEF3C7;
+  color: #D97706;
+  border: 1px solid #FDE68A;
+}
+
+.stats-icon-check {
+  background: #ECFDF5;
+  color: #059669;
+  border: 1px solid #A7F3D0;
+}
+
+.stats-metric-value {
+  display: block;
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--headline);
+  line-height: 1.15;
+}
+
+.stats-metric-label {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--body-muted);
+  line-height: 1.25;
+  margin-top: 3px;
+}
+
+@media (max-width: 768px) {
+  .stats-bar-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .stats-metric-card {
+    padding: 12px 10px;
+    border-radius: 14px;
+    gap: 10px;
+  }
+
+  .stats-metric-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .stats-metric-value {
+    font-size: 1.02rem;
+  }
+
+  .stats-metric-label {
+    font-size: 0.7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Section 2B: Community Intro & Infographic */
+.community-intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.community-feature-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
+  padding: 14px 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.community-feature-card:hover {
+  border-color: var(--primary);
+  transform: translateX(3px);
+}
+
+.community-feature-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #E6FBF7;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.community-infographic-card {
+  background: #FFFFFF;
+  padding: 14px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 860px) {
+  .community-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .community-infographic-card {
+    padding: 10px;
+    border-radius: 18px;
+    order: 2; /* Put infographic right after intro for visual impact */
+  }
+
+  .community-text-col {
+    order: 1;
+  }
+
+  .community-feature-card {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  .community-feature-card span {
+    font-size: 0.88rem;
+    line-height: 1.35;
+  }
+
+  .community-cta-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 14px 24px !important;
+    font-size: 1rem !important;
+    border-radius: 9999px !important;
+  }
+}
+
+/* Section 3: Browser Mockup Books Grid */
+.mockup-books-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+@media (max-width: 860px) {
+  .mockup-books-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .browser-mockup-inner {
+    padding: 20px 14px !important;
+  }
+}
+
+

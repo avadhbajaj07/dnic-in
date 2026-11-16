@@ -301,53 +301,54 @@ export default function Home() {
         <div className="shell text-center" style={{ textAlign: "center" }}>
           <h3
             style={{
-              fontSize: "1.25rem",
+              fontSize: "clamp(1.15rem, 3vw, 1.35rem)",
               fontWeight: 700,
               color: "var(--headline)",
               marginBottom: "24px",
+              lineHeight: 1.3,
             }}
           >
             Join over <strong style={{ color: "var(--primary)" }}>100,000+</strong> developers learning on Dot Net Interview Community!
           </h3>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: "20px",
-              maxWidth: "1000px",
-              margin: "0 auto",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "10px" }}>
-              <YouTubeIcon size={24} />
-              <div style={{ textAlign: "left" }}>
-                <strong style={{ display: "block", fontSize: "0.95rem", color: "var(--headline)" }}>50,000+</strong>
-                <span style={{ fontSize: "0.78rem", color: "var(--body-muted)" }}>YouTube Learners</span>
+          <div className="stats-bar-grid">
+            <div className="stats-metric-card">
+              <div className="stats-metric-icon stats-icon-yt">
+                <YouTubeIcon size={22} />
+              </div>
+              <div>
+                <strong className="stats-metric-value">50,000+</strong>
+                <span className="stats-metric-label">YouTube Learners</span>
               </div>
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "10px" }}>
-              <LinkedInIcon size={24} />
-              <div style={{ textAlign: "left" }}>
-                <strong style={{ display: "block", fontSize: "0.95rem", color: "var(--headline)" }}>25,000+</strong>
-                <span style={{ fontSize: "0.78rem", color: "var(--body-muted)" }}>LinkedIn Network</span>
+            <div className="stats-metric-card">
+              <div className="stats-metric-icon stats-icon-li">
+                <LinkedInIcon size={22} />
+              </div>
+              <div>
+                <strong className="stats-metric-value">25,000+</strong>
+                <span className="stats-metric-label">LinkedIn Network</span>
               </div>
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "10px" }}>
-              <AmazonIcon size={24} />
-              <div style={{ textAlign: "left" }}>
-                <strong style={{ display: "block", fontSize: "0.95rem", color: "var(--headline)" }}>8 Published</strong>
-                <span style={{ fontSize: "0.78rem", color: "var(--body-muted)" }}>Amazon Bestsellers</span>
+            <div className="stats-metric-card">
+              <div className="stats-metric-icon stats-icon-amz">
+                <AmazonIcon size={22} />
+              </div>
+              <div>
+                <strong className="stats-metric-value">8 Published</strong>
+                <span className="stats-metric-label">Amazon Bestsellers</span>
               </div>
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "10px" }}>
-              <CheckCircle2 size={24} color="var(--primary)" />
-              <div style={{ textAlign: "left" }}>
-                <strong style={{ display: "block", fontSize: "0.95rem", color: "var(--headline)" }}>100%</strong>
-                <span style={{ fontSize: "0.78rem", color: "var(--body-muted)" }}>Interview Focused</span>
+            <div className="stats-metric-card">
+              <div className="stats-metric-icon stats-icon-check">
+                <CheckCircle2 size={22} color="#059669" />
+              </div>
+              <div>
+                <strong className="stats-metric-value">100%</strong>
+                <span className="stats-metric-label">Interview Focused</span>
               </div>
             </div>
           </div>
@@ -357,38 +358,44 @@ export default function Home() {
       {/* SECTION 2B: COMMUNITY INTRODUCTION & INFOGRAPHIC */}
       <section className="section section-mint">
         <div className="shell">
-          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "48px", alignItems: "center" }}>
-            <div>
+          <div className="community-intro-grid">
+            <div className="community-text-col">
               <span className="eyebrow">YOUR COMMUNITY</span>
-              <h2 style={{ fontSize: "clamp(1.9rem, 3.5vw, 2.6rem)", marginBottom: "16px" }}>
+              <h2 style={{ fontSize: "clamp(1.8rem, 3.8vw, 2.6rem)", marginBottom: "16px", lineHeight: 1.2 }}>
                 Your Community for Technical Interview Success.
               </h2>
-              <p style={{ fontSize: "1.05rem", lineHeight: "1.75", color: "var(--body)", marginBottom: "20px" }}>
+              <p style={{ fontSize: "1.05rem", lineHeight: "1.75", color: "var(--body)", marginBottom: "24px" }}>
                 Dot Net Interview Community is a learning platform built to help software developers and QA testers clear technical interviews with genuine confidence. We eliminate jargon and focus on what interviewers actually ask.
               </p>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "28px" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <CheckCircle2 size={18} color="var(--primary)" />
+                <div className="community-feature-card">
+                  <div className="community-feature-badge">
+                    <CheckCircle2 size={18} />
+                  </div>
                   <span style={{ fontWeight: 600, color: "var(--headline)" }}>Structured technical interview books (6 Developer &amp; 2 QA titles)</span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <CheckCircle2 size={18} color="var(--primary)" />
+                <div className="community-feature-card">
+                  <div className="community-feature-badge">
+                    <CheckCircle2 size={18} />
+                  </div>
                   <span style={{ fontWeight: 600, color: "var(--headline)" }}>Visual architectural breakdowns &amp; weekly video tutorials</span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <CheckCircle2 size={18} color="var(--primary)" />
+                <div className="community-feature-card">
+                  <div className="community-feature-badge">
+                    <CheckCircle2 size={18} />
+                  </div>
                   <span style={{ fontWeight: 600, color: "var(--headline)" }}>Personalized ATS-friendly resume writing services</span>
                 </div>
               </div>
 
-              <Link href="/about-dnic/" className="button button-primary">
+              <Link href="/about-dnic/" className="button button-primary community-cta-btn">
                 Learn About DNIC <ArrowRight size={16} />
               </Link>
             </div>
 
             {/* Official Community Infographic */}
-            <div style={{ background: "#FFFFFF", padding: "12px", borderRadius: "var(--radius-xl)", border: "1px solid var(--border)", boxShadow: "var(--shadow-lg)" }}>
+            <div className="community-infographic-card">
               <img
                 src="/images/infographics/community-dnic.jpeg"
                 alt="Dot Net Interview Community Infographic"
@@ -427,7 +434,7 @@ export default function Home() {
             </div>
 
             {/* Inside Browser Content */}
-            <div style={{ padding: "36px 28px", background: "#FFFFFF" }}>
+            <div className="browser-mockup-inner" style={{ padding: "36px 28px", background: "#FFFFFF" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "24px", borderBottom: "1px solid #E5E7EB", paddingBottom: "14px", flexWrap: "wrap", gap: "10px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                   <span style={{ fontWeight: 800, fontSize: "1.1rem", color: "#111827" }}>
@@ -444,14 +451,7 @@ export default function Home() {
               </div>
 
               {/* Books Row in Mockup */}
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-                  gap: "18px",
-                  alignItems: "stretch",
-                }}
-              >
+              <div className="mockup-books-grid">
                 {books.slice(0, 4).map((b) => (
                   <div
                     key={b.slug}
@@ -471,6 +471,7 @@ export default function Home() {
                       <img
                         src={b.coverImageTight || b.coverImage}
                         alt={b.title}
+                        className="browser-mockup-book-img"
                         style={{
                           height: "170px",
                           width: "auto",
