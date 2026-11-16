@@ -9,9 +9,8 @@
     "lint": "echo 'Use next build for app validation'"
   },
   "dependencies": {
-    "@next/swc-darwin-arm64": "^16.4.6",
     "lucide-react": "^1.73.0",
-    "next": "^16.0.8",
+    "next": "^16.4.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
