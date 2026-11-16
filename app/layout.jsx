@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import IOSBottomNav from "../components/IOSBottomNav";
 import { site } from "../lib/site";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://purple-skunk-231017.hostingersite.com";
@@ -87,6 +88,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
+        <IOSBottomNav />
       </body>
     </html>
   );

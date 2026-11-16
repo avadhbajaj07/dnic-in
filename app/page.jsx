@@ -1,6 +1,12 @@
 import Link from "next/link";
 import BookCard from "../components/BookCard";
 import HeroSlider from "../components/HeroSlider";
+import {
+  BooksSlider,
+  EngineersSlider,
+  SuccessCasesSlider,
+  TestimonialsSlider,
+} from "../components/HomeSliders";
 import { books } from "../lib/books";
 import { site, packages, money } from "../lib/site";
 import {
@@ -505,7 +511,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 4: ALL-IN-ONE BUNDLE FOR END-TO-END INTERVIEW PREP (THE 8-CARD GRID) */}
+      {/* SECTION 4: ALL-IN-ONE BUNDLE FOR END-TO-END INTERVIEW PREP (THE 8-BOOK SLIDER) */}
       <section className="section">
         <div className="shell text-center" style={{ textAlign: "center" }}>
           <span
@@ -529,18 +535,14 @@ export default function Home() {
             All-in-One Bundle for End-to-End Interview Prep
           </h2>
 
-          <p style={{ color: "var(--body-muted)", fontSize: "1.1rem", maxWidth: "640px", margin: "0 auto 48px" }}>
+          <p style={{ color: "var(--body-muted)", fontSize: "1.1rem", maxWidth: "640px", margin: "0 auto 28px" }}>
             Eight specialized titles covering core runtime fundamentals, modern C#, distributed cloud patterns, and senior QA automation.
           </p>
 
-          {/* 8 Book Cards Grid */}
-          <div className="books-grid">
-            {books.map((book) => (
-              <BookCard key={book.slug} book={book} />
-            ))}
-          </div>
+          {/* 8-Book Touch & Swipeable Slider */}
+          <BooksSlider books={books} />
 
-          <div style={{ marginTop: "44px" }}>
+          <div style={{ marginTop: "32px" }}>
             <Link href="/books/" className="hero-pill-btn-black">
               Explore All 8 Books (100+ Hours of Prep) ↗
             </Link>
@@ -569,53 +571,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 5: DESIGNED BY TOP ENGINEERS FROM FAANG & BEYOND */}
+      {/* SECTION 5: DESIGNED BY TOP ENGINEERS FROM FAANG & BEYOND (SWIPEABLE SLIDER) */}
       <section className="section">
         <div className="shell text-center" style={{ textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", marginBottom: "12px" }}>
             Designed by Top Engineers from <span style={{ color: "var(--primary)" }}>Leading Tech &amp; Beyond</span>
           </h2>
-          <p style={{ color: "var(--body-muted)", fontSize: "1.05rem", maxWidth: "600px", margin: "0 auto 40px" }}>
+          <p style={{ color: "var(--body-muted)", fontSize: "1.05rem", maxWidth: "600px", margin: "0 auto 28px" }}>
             Structured around questions and architectural standards verified across top engineering firms.
           </p>
 
-          <div className="engineer-grid">
-            {engineers.map((eng, idx) => (
-              <div
-                key={idx}
-                className="engineer-card"
-                style={{ background: eng.bg }}
-              >
-                <div className="engineer-avatar" style={{ color: eng.accent }}>
-                  {eng.avatar}
-                </div>
-                <div style={{ textAlign: "left" }}>
-                  <h4 style={{ fontSize: "1rem", margin: "0 0 2px", color: "#111827" }}>
-                    {eng.name}
-                  </h4>
-                  <span style={{ fontSize: "0.82rem", color: "#4B5563", display: "block" }}>
-                    {eng.role}
-                  </span>
-                  <div
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      background: "#FFFFFF",
-                      padding: "4px 10px",
-                      borderRadius: "6px",
-                      marginTop: "8px",
-                      boxShadow: "0 1px 3px rgba(0, 0, 0, 0.08)",
-                      border: "1px solid rgba(0, 0, 0, 0.04)",
-                    }}
-                  >
-                    {eng.logo}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Engineers Swipeable Slider */}
+          <EngineersSlider engineers={engineers} />
 
-          <div style={{ marginTop: "36px" }}>
+          <div style={{ marginTop: "32px" }}>
             <Link href="/resume-writing/get-started/" className="hero-pill-btn-green">
               Start Your Prep Today ↗
             </Link>
@@ -623,64 +592,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 6: SUCCESS CASES (PLACEMENT TABLE) */}
+      {/* SECTION 6: SUCCESS CASES (SWIPEABLE MILESTONE CAROUSEL) */}
       <section className="section" style={{ background: "#F9FAFB" }}>
         <div className="shell text-center" style={{ textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", marginBottom: "12px" }}>
             Success Cases
           </h2>
-          <p style={{ color: "var(--body-muted)", fontSize: "1.05rem", maxWidth: "600px", margin: "0 auto 36px" }}>
+          <p style={{ color: "var(--body-muted)", fontSize: "1.05rem", maxWidth: "600px", margin: "0 auto 28px" }}>
             Recent placement milestones and career leaps made by engineers who prepared with DNIC books.
           </p>
 
-          {/* Table Wrap */}
-          <div className="success-table-wrap">
-            <table className="success-table">
-              <thead>
-                <tr>
-                  <th>Company</th>
-                  <th>Target Role</th>
-                  <th>Outcome</th>
-                  <th>Compensation / Hike</th>
-                  <th>Prep Time</th>
-                </tr>
-              </thead>
-              <tbody>
-                {successCases.map((sc, i) => (
-                  <tr key={i}>
-                    <td>
-                      <div
-                        style={{
-                          background: "#FFFFFF",
-                          padding: "5px 10px",
-                          borderRadius: "6px",
-                          border: "1px solid var(--border)",
-                          boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
-                          display: "inline-flex",
-                          alignItems: "center",
-                        }}
-                      >
-                        {sc.logo}
-                      </div>
-                    </td>
-                    <td>
-                      <span style={{ fontWeight: 600, color: "var(--headline)" }}>{sc.role}</span>
-                      <small style={{ display: "block", color: "var(--body-muted)" }}>Level: {sc.level}</small>
-                    </td>
-                    <td>
-                      <span className="badge badge-teal">{sc.outcome}</span>
-                    </td>
-                    <td>
-                      <strong style={{ color: "#065F46" }}>{sc.hike}</strong>
-                    </td>
-                    <td>{sc.prepTime}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          {/* Success Cases Carousel */}
+          <SuccessCasesSlider successCases={successCases} />
 
-          <div style={{ marginTop: "36px" }}>
+          <div style={{ marginTop: "32px" }}>
             <Link href="/resume-writing/get-started/" className="hero-pill-btn-green">
               Start Your Success Story ↗
             </Link>
@@ -688,35 +613,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 7: 100,000+ SUCCESS STORIES (TESTIMONIALS WALL) */}
+      {/* SECTION 7: 100,000+ SUCCESS STORIES (TESTIMONIALS SLIDER) */}
       <section className="section section-mint">
         <div className="shell text-center" style={{ textAlign: "center" }}>
           <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", marginBottom: "12px" }}>
             100,000+ Success Stories
           </h2>
-          <p style={{ color: "var(--body)", fontSize: "1.05rem", maxWidth: "600px", margin: "0 auto 40px" }}>
+          <p style={{ color: "var(--body)", fontSize: "1.05rem", maxWidth: "600px", margin: "0 auto 28px" }}>
             Verified feedback from engineers who prepared with Nirbhay Chauhan&apos;s interview guides.
           </p>
 
-          <div className="reviews-grid">
-            {testimonials.map((t, i) => (
-              <div key={i} className="review-card" style={{ textAlign: "left" }}>
-                <div>
-                  <div className="review-stars">{"★".repeat(t.rating)}</div>
-                  <p className="review-text">“{t.text}”</p>
-                </div>
-                <div className="review-author">
-                  <strong>{t.name}</strong>
-                  <span>{t.role} · {t.city}</span>
-                  <span style={{ fontSize: "0.72rem", color: "var(--primary)", marginTop: "4px", fontWeight: 700 }}>
-                    {t.source}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Testimonials Swipeable Slider */}
+          <TestimonialsSlider testimonials={testimonials} />
 
-          <div style={{ marginTop: "36px" }}>
+          <div style={{ marginTop: "32px" }}>
             <Link href="/books/" className="hero-pill-btn-green">
               Get Started Now ↗
             </Link>
